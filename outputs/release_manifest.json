@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0",
+  "well_mixed": {
+    "peak_count": 14,
+    "mean_period": 10.534615384615384,
+    "period_std": 0.004985185152624235
+  },
+  "spatial": {
+    "solver_success": true,
+    "max_spatial_std": 0.21417393232341464,
+    "final_spatial_std": 5.52608970990732e-06
+  },
+  "rowan": {
+    "status": "ready_but_not_submitted",
+    "reason": "explicit structures and budget authorization are required"
+  }
+}

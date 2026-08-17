@@ -1,0 +1,13 @@
+{
+  "project": "nilered-bz-reaction-twin",
+  "submission_policy": "explicit_authorization_required",
+  "status": "not_submitted",
+  "reason": "No creator-approved elementary-step structures or credit budget supplied.",
+  "planned_workflows": [
+    "multistage_optimization",
+    "double_ended_ts_search",
+    "basic_calculation_optimize_ts_frequencies",
+    "irc_if_justified"
+  ],
+  "workflow_records": []
+}

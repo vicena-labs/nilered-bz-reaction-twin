@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the sources in docs/SOURCES.md."
+title: "NileRed BZ Reaction Twin"
+type: software
+version: 0.1.0
+date-released: 2026-08-17
+authors:
+  - name: Vicena
+url: https://github.com/vicena-labs/nilered-bz-reaction-twin
+license: 0BSD

@@ -1,0 +1,56 @@
+[
+  {
+    "stage": "01_scope",
+    "objective": "Define the visible oscillatory phenomenon and the question to test.",
+    "input_contract": "Creator-approved video observation or abstract target; no recipe required.",
+    "output_artifact": "scope.yaml",
+    "acceptance_gate": "Question, observable, and units are explicit.",
+    "route": "local",
+    "safety_boundary": "No operational chemistry details."
+  },
+  {
+    "stage": "02_kinetics",
+    "objective": "Fit or stress-test the dimensionless well-mixed and spatial Oregonator layers.",
+    "input_contract": "Normalized parameters, initial state, and numerical tolerances.",
+    "output_artifact": "kinetics_summary.json and figures",
+    "acceptance_gate": "Solver success, peak detection, and parameter sensitivity are reported.",
+    "route": "local",
+    "safety_boundary": "Abstract state variables only."
+  },
+  {
+    "stage": "03_structure_gate",
+    "objective": "Select a creator- and chemist-approved elementary step for molecular study.",
+    "input_contract": "Mapped 3-D reactant and product structures with provenance.",
+    "output_artifact": "reactant.xyz and product.xyz",
+    "acceptance_gate": "Atom ordering matches; charge, spin, geometry source, and scope are recorded.",
+    "route": "human review",
+    "safety_boundary": "Structures are not inferred from the video and no recipe is generated."
+  },
+  {
+    "stage": "04_rowan_path",
+    "objective": "Characterize the selected elementary step with bounded managed molecular modeling.",
+    "input_contract": "Approved 3-D endpoints, method/settings, and explicit Vicena credit cap.",
+    "output_artifact": "Rowan UUID, path energies, TS candidate, and provider provenance.",
+    "acceptance_gate": "Submission is authorized; TS is checked with frequencies and, when appropriate, IRC.",
+    "route": "Rowan",
+    "safety_boundary": "Rowan models selected elementary steps, not the full BZ oscillatory network."
+  },
+  {
+    "stage": "05_observation_bridge",
+    "objective": "Compare model phase, period, and waveform shape to an anonymized intensity trace.",
+    "input_contract": "CSV with time and intensity proxy; calibration metadata.",
+    "output_artifact": "comparison.csv and review figure",
+    "acceptance_gate": "Timebase, preprocessing, and residuals are visible.",
+    "route": "local + Rowan results",
+    "safety_boundary": "No private lab data or hazardous procedure is required."
+  },
+  {
+    "stage": "06_creator_review",
+    "objective": "Return a concise failure-aware summary for scientific critique.",
+    "input_contract": "All prior artifacts plus limitations.",
+    "output_artifact": "creator_review.md",
+    "acceptance_gate": "Claims are separated into measured, computed, and unknown.",
+    "route": "local",
+    "safety_boundary": "No endorsement is requested or implied."
+  }
+]
