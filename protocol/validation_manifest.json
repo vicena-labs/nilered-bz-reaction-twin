@@ -155,6 +155,7 @@
     "define and justify the Rowan method after structure review",
     "verify the primary experimental protocol and obtain institutional safety approval"
   ],
-  "git_base_commit": "b8904a08b73207edbfca6a0b158a4fb74bae9787",
-  "generated_from_working_tree": true
+  "git_base_commit": "a5c8c4350e71fe72b77f13a0ee4fe8b65ef46840",
+  "generated_from_working_tree": false,
+  "release_commit": "a5c8c4350e71fe72b77f13a0ee4fe8b65ef46840"
 }
