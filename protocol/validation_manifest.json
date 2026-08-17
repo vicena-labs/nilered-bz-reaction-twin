@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "project": "nilered-bz-reaction-twin",
+  "status": "revision_required",
+  "audit": {
+    "type": "internal_pre_audit",
+    "formal_certificate": false,
+    "lab_use": "blocked",
+    "scope": "software reproducibility and evidence-gate review only"
+  },
+  "source_evidence": [
+    {
+      "id": "S1",
+      "url": "https://www.youtube.com/watch?v=LL3kVtc-4vY",
+      "role": "creator observation/context",
+      "limitation": "not a primary experimental protocol"
+    },
+    {
+      "id": "S2",
+      "url": "https://diverdi.colostate.edu/C442/references/SOPs/nature_2021_v597_p293.pdf",
+      "role": "reproducibility/SOP checklist context",
+      "limitation": "not project-specific safety approval"
+    }
+  ],
+  "checks": [
+    {
+      "id": "unit_tests",
+      "status": "passed",
+      "command": "pytest -q",
+      "scope": "package implementation checks; not chemistry validation"
+    },
+    {
+      "id": "cli_regeneration",
+      "status": "passed",
+      "command": "nilered-twin --output-dir outputs",
+      "scope": "regenerated release manifest and numerical outputs"
+    },
+    {
+      "id": "review_notebook",
+      "status": "passed",
+      "code_cells_executed": 6,
+      "error_count": 0,
+      "visual_outputs": 2,
+      "scope": "kinetics review and six-stage pipeline visualization"
+    },
+    {
+      "id": "rowan_preflight",
+      "status": "passed",
+      "submission": "not_submitted",
+      "reason": "approved structures and explicit credit authorization are required"
+    }
+  ],
+  "numerical_metrics": {
+    "well_mixed_peak_count": 14,
+    "well_mixed_mean_period": 10.534615384615384,
+    "well_mixed_period_std": 0.004985185152624235,
+    "spatial_solver_success": true,
+    "max_spatial_std": 0.21417393232341464,
+    "final_spatial_std": 5.52608970990732e-06,
+    "units": "dimensionless model time, state variables, and position"
+  },
+  "artifacts": [
+    {
+      "path": "outputs/bz_research_twin.png",
+      "sha256": "0e790a024ee544b23462a6e3524e5b5598989ffea6525c8a9cf8fe28a4a0238c"
+    },
+    {
+      "path": "outputs/oregonator_spatial.csv",
+      "sha256": "c514709f096e773553167e9a96a868e2b97171e871a9960637b1c9f954e25c10"
+    },
+    {
+      "path": "outputs/release_manifest.json",
+      "sha256": "2ce5f9ab3b706274832b0fc7d1001c0f2fc2c712c1dfdda54ae647d07ec6a185"
+    },
+    {
+      "path": "outputs/synthesis_pipeline.png",
+      "sha256": "37ca600a0e2f45b481ddb3660bbb85230570f9becc63e453d82e8f30cd36a28f"
+    },
+    {
+      "path": "outputs/synthesis_plan.json",
+      "sha256": "1b51ccc3a8de8770450ee74b89669d7fa9541624e0eb47747af95a3ee87e461e"
+    },
+    {
+      "path": "outputs/synthesis_review.png",
+      "sha256": "f92a0daef87ddda2d405126461166b3d985ef12d9f471377537d4df7ec9ae970"
+    },
+    {
+      "path": "notebooks/nilered_synthesis_review.ipynb",
+      "sha256": "46ea97b0a2335371a14e1d3118d6d75ded75a4f9905dac22d8b03e5491d998b7"
+    },
+    {
+      "path": "protocol/REPRODUCIBILITY_PROTOCOL.md",
+      "sha256": "3c18c629139829716abe4f273c82daec329e002d957bb5e1672a83ecbd4f38ab"
+    },
+    {
+      "path": "protocol/PRE_AUDIT_REPORT.md",
+      "sha256": "6272c80df42ef82b11108a0bcfff06e6e9562eb0184066277c30016e04c4f3f9"
+    },
+    {
+      "path": "protocol/README.md",
+      "sha256": "b23e2aa81f0caac421e9f5e640e7b632377013f660094623bb7b3f7e2ee0b2ff"
+    }
+  ],
+  "blockers": [
+    "camera intensity/exposure/white-balance/gamma artifacts are unresolved",
+    "no approved elementary step or mapped 3-D molecular endpoints",
+    "Rowan level of theory and solvent/method rationale are undefined for an actual step",
+    "no Rowan job has been submitted or validated",
+    "primary experimental protocol and institutional safety approvals are not in the repository"
+  ],
+  "required_revisions_before_lab_use": [
+    "resolve or bound camera/data artifacts",
+    "define and justify the Rowan method after structure review",
+    "verify the primary experimental protocol and obtain institutional safety approval"
+  ],
+  "git_base_commit": "7b948a10d97e8dc5d9ed2157e83ff971538d2f88"
+}

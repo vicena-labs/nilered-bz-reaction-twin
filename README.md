@@ -25,8 +25,8 @@ pytest -q
 nilered-twin --output-dir outputs
 ```
 
-Start with `docs/CREATOR_REVIEW.md`, `docs/SYNTHESIS.md`, `rowan/README.md`, and
-the review notebook in `notebooks/`.
+Start with `docs/CREATOR_REVIEW.md`, `docs/SYNTHESIS.md`, `protocol/README.md`,
+`rowan/README.md`, and the review notebook in `notebooks/`.
 
 ## Rowan status
 
