@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "well_mixed": {
     "peak_count": 14,
     "mean_period": 10.534615384615384,
@@ -13,5 +13,11 @@
   "rowan": {
     "status": "ready_but_not_submitted",
     "reason": "explicit structures and budget authorization are required"
+  },
+  "virtual_twin": {
+    "html": "virtual_twin.html",
+    "data": "virtual_twin_data.json",
+    "frames": 121,
+    "calibration_status": "not_calibrated_to_source_video"
   }
 }

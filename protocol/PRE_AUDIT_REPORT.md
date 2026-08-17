@@ -48,6 +48,10 @@ The normalized 0-D and 1-D Oregonator layers run, report solver success and nume
 
 The six-stage diagram makes the evidence gates visible: scope, kinetics, structure, Rowan, observation bridge, and review. It is a communication artifact and not a laboratory workflow.
 
+### F-003a — interactive virtual twin: pass with calibration limitation
+
+The repository now generates a self-contained HTML demo with a virtual vessel cross-section, 121 model frames, a moving model-signal marker, controls, and an external source-video link. Static HTML/data checks pass and the notebook regenerates the bundle. The browser-side rendering is a visual communication layer; it is not calibrated to the source video and was not treated as a chemical validation.
+
 ### F-003 — video-to-signal bridge: blocked
 
 The current evidence does not establish that video intensity is linear, calibrated, or free of automatic camera processing. Quantitative fitting must not be treated as validated until these artifacts are measured or bounded.

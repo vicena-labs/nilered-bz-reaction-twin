@@ -25,8 +25,17 @@ pytest -q
 nilered-twin --output-dir outputs
 ```
 
-Start with `docs/CREATOR_REVIEW.md`, `docs/SYNTHESIS.md`, `protocol/README.md`,
-`rowan/README.md`, and the review notebook in `notebooks/`.
+Start with `docs/CREATOR_REVIEW.md`, `docs/SYNTHESIS.md`, `docs/VIRTUAL_TWIN.md`,
+`protocol/README.md`, `rowan/README.md`, and the review notebooks in `notebooks/`.
+
+## Interactive virtual twin
+
+Run `nilered-twin --output-dir outputs`, then serve the output folder with
+`python -m http.server 8000 --directory outputs` and open
+`virtual_twin.html`. The demo shows an animated virtual vessel, a model signal,
+and the source video as external context. It is explicitly labeled as an
+uncalibrated model layer rather than an exact laboratory reconstruction. See
+`docs/VIRTUAL_TWIN.md` for the interpretation guide.
 
 ## Rowan status
 

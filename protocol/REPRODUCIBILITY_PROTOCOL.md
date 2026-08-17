@@ -105,6 +105,7 @@ Release only when the evidence register contains:
 | Local code | Tests pass and CLI outputs regenerate | Passed in the current release; rerun in CI/reviewer environment |
 | Kinetics | Solver success, peak detection, period summary, and spatial metrics are printed | Passed for the normalized baseline; not an experimental fit |
 | Visualization | Kinetics figure and six-stage pipeline figure render from the notebook | Passed; visual inspection still belongs to the reviewer |
+| Interactive virtual twin | HTML embeds model data, renders a vessel canvas, trace, controls, and source-video link | Static checks passed; browser-side JavaScript still needs reviewer inspection |
 | Video bridge | Acquisition artifacts assessed and preprocessing frozen | **Blocked** |
 | Molecular mechanism | Approved mapped structures, justified method, frequencies/connectivity checks | **Blocked** |
 | Rowan | Authorized job with saved UUID, results, and credit record | Preflight only; **not submitted** |

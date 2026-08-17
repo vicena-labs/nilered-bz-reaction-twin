@@ -1,5 +1,12 @@
 # Creator review: one clear path
 
+### 0. Watch the virtual twin
+
+Run the generated `outputs/virtual_twin.html` in a browser. It places the source
+video beside an animated vessel cross-section and a live model trace. This is
+an interactive visual surrogate, not yet a calibrated reconstruction; the
+interpretation and remaining gates are documented in `VIRTUAL_TWIN.md`.
+
 ### 1. See the phenomenon
 
 Open `outputs/bz_research_twin.png`. The top panel is the well-mixed oscillator;

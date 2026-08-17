@@ -1,12 +1,12 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "project": "nilered-bz-reaction-twin",
   "status": "revision_required",
   "audit": {
     "type": "internal_pre_audit",
     "formal_certificate": false,
     "lab_use": "blocked",
-    "scope": "software reproducibility and evidence-gate review only"
+    "scope": "software reproducibility, interactive rendering, and evidence-gate review only"
   },
   "source_evidence": [
     {
@@ -27,21 +27,33 @@
       "id": "unit_tests",
       "status": "passed",
       "command": "pytest -q",
-      "scope": "package implementation checks; not chemistry validation"
+      "scope": "package and virtual-twin implementation checks; not chemistry validation"
     },
     {
       "id": "cli_regeneration",
       "status": "passed",
       "command": "nilered-twin --output-dir outputs",
-      "scope": "regenerated release manifest and numerical outputs"
+      "scope": "regenerated numerical outputs, figures, HTML, and JSON"
     },
     {
       "id": "review_notebook",
       "status": "passed",
-      "code_cells_executed": 6,
+      "code_cells_executed": 1,
       "error_count": 0,
-      "visual_outputs": 2,
-      "scope": "kinetics review and six-stage pipeline visualization"
+      "html_output": 1,
+      "scope": "virtual-twin regeneration notebook"
+    },
+    {
+      "id": "interactive_twin_static_check",
+      "status": "passed",
+      "frames": 121,
+      "positions": 60,
+      "scope": "embedded JSON shape, required HTML markers, and output presence"
+    },
+    {
+      "id": "browser_runtime_render",
+      "status": "not_verified",
+      "reason": "not treated as a substitute for human browser inspection"
     },
     {
       "id": "rowan_preflight",
@@ -59,6 +71,14 @@
     "final_spatial_std": 5.52608970990732e-06,
     "units": "dimensionless model time, state variables, and position"
   },
+  "virtual_twin": {
+    "version": "0.2.0",
+    "frames": 121,
+    "spatial_positions": 60,
+    "source_video_embedded_externally": true,
+    "calibration_status": "not_calibrated_to_source_video",
+    "physical_scene_status": "1-D vessel cross-section surrogate; not 3-D lab reconstruction"
+  },
   "artifacts": [
     {
       "path": "outputs/bz_research_twin.png",
@@ -70,7 +90,7 @@
     },
     {
       "path": "outputs/release_manifest.json",
-      "sha256": "2ce5f9ab3b706274832b0fc7d1001c0f2fc2c712c1dfdda54ae647d07ec6a185"
+      "sha256": "e2afa608fe4fc957fdf59173db7597b8a177a1dea27ce1c287526e2b2c93745a"
     },
     {
       "path": "outputs/synthesis_pipeline.png",
@@ -85,33 +105,56 @@
       "sha256": "f92a0daef87ddda2d405126461166b3d985ef12d9f471377537d4df7ec9ae970"
     },
     {
-      "path": "notebooks/nilered_synthesis_review.ipynb",
-      "sha256": "46ea97b0a2335371a14e1d3118d6d75ded75a4f9905dac22d8b03e5491d998b7"
+      "path": "outputs/virtual_twin.html",
+      "sha256": "077a718038e0cee69504056d9ff12056d10a395f8d7d3a84505e39747bc5979c"
+    },
+    {
+      "path": "outputs/virtual_twin_data.json",
+      "sha256": "95b360eb65dceb804e5396f51cf72b4c0495ec07b403dbb7d79a0dd2c10c648d"
+    },
+    {
+      "path": "notebooks/nilered_virtual_twin_demo.ipynb",
+      "sha256": "eac14172fb970c4a3e2301f274f5533b3eecef4f39483eb7e73c22c5d7399963"
+    },
+    {
+      "path": "docs/VIRTUAL_TWIN.md",
+      "sha256": "c82fa167e9efc45970241f68e1007f31bde8f8baccf1cad50b7f576ec0492cff"
     },
     {
       "path": "protocol/REPRODUCIBILITY_PROTOCOL.md",
-      "sha256": "3c18c629139829716abe4f273c82daec329e002d957bb5e1672a83ecbd4f38ab"
+      "sha256": "f185a5e6a331697064ba81fae6500405deed984a3606da0d26396390731fb0db"
     },
     {
       "path": "protocol/PRE_AUDIT_REPORT.md",
-      "sha256": "6272c80df42ef82b11108a0bcfff06e6e9562eb0184066277c30016e04c4f3f9"
+      "sha256": "ec2e85ecbea9b31ed185f39063b1a9e8069bba912a25d5996cc0f3f1910be2fb"
     },
     {
       "path": "protocol/README.md",
       "sha256": "b23e2aa81f0caac421e9f5e640e7b632377013f660094623bb7b3f7e2ee0b2ff"
+    },
+    {
+      "path": "src/nilered_twin/virtual_twin.py",
+      "sha256": "c9f28f70cdb41f9674acdcf2873c393cfb7bc3c6f9a3717c2935c08124b28b6f"
+    },
+    {
+      "path": "tests/test_nilered_twin.py",
+      "sha256": "595bdd67ea073b6bd84c5ca2440153392e5eca23efb1cb2e7944fd42abf4074a"
     }
   ],
   "blockers": [
     "camera intensity/exposure/white-balance/gamma artifacts are unresolved",
+    "no authorized timestamped video trace or physical vessel geometry",
     "no approved elementary step or mapped 3-D molecular endpoints",
     "Rowan level of theory and solvent/method rationale are undefined for an actual step",
     "no Rowan job has been submitted or validated",
     "primary experimental protocol and institutional safety approvals are not in the repository"
   ],
   "required_revisions_before_lab_use": [
-    "resolve or bound camera/data artifacts",
+    "calibrate the video/time/optical bridge",
+    "define physical geometry and conditions from a verified source",
     "define and justify the Rowan method after structure review",
     "verify the primary experimental protocol and obtain institutional safety approval"
   ],
-  "git_base_commit": "7b948a10d97e8dc5d9ed2157e83ff971538d2f88"
+  "git_base_commit": "b8904a08b73207edbfca6a0b158a4fb74bae9787",
+  "generated_from_working_tree": true
 }
